@@ -1,0 +1,21 @@
+---
+import PlanCard from "./PlanCard.astro";
+---
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">¡Descubre tu <span class="accent">Duo</span> ideal!</h2>
+    <p class="section__subtitle">TV cable + Internet de fibra óptica en un solo plan. Todo lo que necesitas para tu hogar.</p>
+
+    <div class="plans">
+      <PlanCard speed="50 Mbps" price={50} />
+      <PlanCard speed="200 Mbps" price={90} />
+      <PlanCard speed="300 Mbps" price={120} />
+      <PlanCard speed="400 Mbps" price={140} />
+    </div>
+
+    <div class="ctarow">
+      <a href="tel:017481950" class="btn btn--outline-blue">📞 Llámanos al <strong>&nbsp;01 7481950</strong></a>
+      <a href="https://wa.me/51999999999?text=Hola,%20quiero%20saber%20sobre%20los%20planes%20dúo" class="btn btn--whatsapp">WhatsApp Ventas</a>
+    </div>
+  </div>
+</section>

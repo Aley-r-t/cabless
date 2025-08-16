@@ -1,0 +1,20 @@
+---
+const { speed = "50 Mbps", price = 50 } = Astro.props;
+---
+<div class="card">
+  <div class="plancard__header">
+    <span>📺 Cable HD</span><span style="color:#cbd5e1;">+</span><span>🌐 Internet Fibra Óptica</span>
+  </div>
+
+  <div class="plancard__speed">{speed}</div>
+
+  <div class="plancard__price">S/ {price} <span style="color:#667085;font-size:18px;font-weight:600;">Mensual</span></div>
+
+  <div class="plancard__foot">*Instalación gratuita</div>
+
+  <a
+    class="btn btn--primary plancard__btn"
+    href={`https://wa.me/51999999999?text=Quiero%20el%20plan%20${price}%20${speed}`}
+    aria-label="Quiero este plan"
+  >Lo quiero</a>
+</div>

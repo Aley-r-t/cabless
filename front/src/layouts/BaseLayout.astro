@@ -1,0 +1,20 @@
+---
+const {
+  title = "Cable Laser | Internet + Cable",
+  description = "Internet fibra óptica + Cable HD desde S/50. Planes dúo y atención por WhatsApp."
+} = Astro.props;
+
+import "../styles/main.css";
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
