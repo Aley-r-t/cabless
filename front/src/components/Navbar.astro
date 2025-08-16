@@ -1,30 +1,455 @@
 ---
-const links = [
-  { href: "#", label: "Inicio" },
-  { href: "#envivo", label: "EN VIVO" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#cobertura", label: "Cobertura" },
-];
+// Navbar.astro
 ---
-<header class="header">
-  <div class="container nav">
-    <a href="/" class="brand" aria-label="Cable Laser">
-      <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="8" width="22" height="10" rx="5" fill="#153e7a"/>
-        <circle cx="26" cy="13" r="8" fill="#ff6a00"/>
-      </svg>
-      <span class="brand__text">Cable<span class="brand__accent">Laser</span></span>
-    </a>
 
-    <nav class="nav__links">
-      {links.map((l) => <a class="nav__link" href={l.href}>{l.label}</a>)}
-    </nav>
+<nav class="cable-laser-navbar">
+  <div class="navbar-container">
+    
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        <img src="/logocolor.png" alt="Logo Cable Laser" class="logo-img1" />
+      </a>
+    </div>
 
-    <a href="tel:017481950" class="btn btn--outline-blue nav__cta hidden md:show" aria-label="Llámanos">
-      <!-- phone icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.15.38 2.34.57 3.56.57a1 1 0 011 1V20a1 1 0 01-1 1C10.42 21 3 13.58 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.22.19 2.41.57 3.56a1 1 0 01-.25 1.05l-2.2 2.18z"/></svg>
-      Ventas: 01 7481950
-    </a>
+    
+    <!-- Menú de navegación -->
+    <div class="navbar-menu">
+      <ul class="navbar-links">
+        <li><a href="#" class="navbar-link">Inicio</a></li>
+        <li><a href="#" class="navbar-link">EN VIVO</a></li>
+        <li><a href="#" class="navbar-link">Nosotros</a></li>
+        <li><a href="#" class="navbar-link">Servicios</a></li>
+        <li><a href="#" class="navbar-link">Cobertura</a></li>
+      </ul>
+    </div>
+    
+    <!-- Botón de contacto -->
+    <div class="navbar-contact">
+      <a href="tel:01 7481950" class="contact-button">
+        <div class="phone-icon-placeholder">
+          [📞]
+        </div>
+        <span class="contact-text">Ventas: 01 7481950</span>
+      </a>
+    </div>
+    
+    <!-- Menú hamburguesa para móvil -->
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
   </div>
-</header>
+  
+  <!-- Menú móvil -->
+  <div class="mobile-menu">
+    <ul class="mobile-links">
+      <li><a href="#" class="mobile-link">Inicio</a></li>
+      <li><a href="#" class="mobile-link">EN VIVO</a></li>
+      <li><a href="#" class="mobile-link">Nosotros</a></li>
+      <li><a href="#" class="mobile-link">Servicios</a></li>
+      <li><a href="#" class="mobile-link">Cobertura</a></li>
+    </ul>
+    <div class="mobile-contact">
+      <a href="tel:01 7481950" class="mobile-contact-button">
+        <div class="mobile-phone-icon">
+          [📞]
+        </div>
+        <span>Ventas: 01 7481950</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+/* Reset y base */
+.cable-laser-navbar {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Container principal */
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  height: 70px;
+}
+
+.logo-img1 {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+.logo-placeholder {
+  width: 120px;
+  height: 45px;
+  background-color: rgba(12, 29, 70, 0.1);
+  border: 2px dashed rgba(12, 29, 70, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: rgba(12, 29, 70, 0.6);
+  font-weight: 500;
+}
+
+/* Menú de navegación */
+.navbar-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+  align-items: center;
+}
+
+.navbar-link {
+  color: #0C1D46;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: #01247C;
+  background-color: rgba(12, 29, 70, 0.05);
+}
+
+.navbar-link.active {
+  color: #0C1D46;
+  background-color: rgba(12, 29, 70, 0.1);
+  font-weight: 800;
+}
+
+/* Botón de contacto */
+.navbar-contact {
+  flex-shrink: 0;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0C1D46;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(12, 29, 70, 0.2);
+}
+
+.contact-button:hover {
+  background-color: #01247C;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(12, 29, 70, 0.3);
+}
+
+.phone-icon-placeholder {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-text {
+  white-space: nowrap;
+}
+
+/* Menú hamburguesa */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  padding: 8px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #4a5568;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Menú móvil */
+.mobile-menu {
+  display: none;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.mobile-links li {
+  margin-bottom: 12px;
+}
+
+.mobile-link {
+  color: #0C1D46;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 0;
+  display: block;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.mobile-link:hover {
+  color: #01247C;
+}
+
+.mobile-link.active {
+  color: #0C1D46;
+  background-color: rgba(12, 29, 70, 0.1);
+  font-weight: 800;
+}
+
+.mobile-contact-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #0C1D46;
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.mobile-phone-icon {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-links {
+    gap: 24px;
+  }
+  
+  .navbar-link {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 12px 16px;
+  }
+  
+  .navbar-menu {
+    display: none;
+  }
+  
+  .navbar-contact {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .logo-placeholder {
+    width: 100px;
+    height: 38px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 10px 12px;
+    height: 60px;
+  }
+  
+  .logo-placeholder {
+    width: 90px;
+    height: 35px;
+    font-size: 9px;
+  }
+}
+
+/* Estados activos para JavaScript */
+.mobile-menu-active .mobile-menu {
+  display: block;
+}
+
+.mobile-menu-active .mobile-menu-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-active .mobile-menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-active .mobile-menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+</style>
+
+<script>
+// JavaScript para el menú móvil y navegación activa
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const navbar = document.querySelector('.cable-laser-navbar');
+  
+  // Funcionalidad del menú móvil
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener('click', function() {
+      navbar.classList.toggle('mobile-menu-active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('mobile-menu-active');
+      });
+    });
+    
+    // Cerrar menú al redimensionar ventana
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navbar.classList.remove('mobile-menu-active');
+      }
+    });
+  }
+  
+  // Funcionalidad de navegación activa
+  const navLinks = document.querySelectorAll('.navbar-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-link');
+  
+  // Función para establecer enlace activo
+  function setActiveLink(clickedLink, linkGroup) {
+    // Remover clase active de todos los enlaces del grupo
+    linkGroup.forEach(link => {
+      link.classList.remove('active');
+    });
+    
+    // Agregar clase active al enlace clickeado
+    clickedLink.classList.add('active');
+    
+    // Guardar en localStorage para mantener estado
+    const linkText = clickedLink.textContent.trim();
+    localStorage.setItem('activePage', linkText);
+  }
+  
+  // Event listeners para enlaces desktop
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      setActiveLink(this, navLinks);
+      
+      // También actualizar el enlace correspondiente en móvil
+      const linkText = this.textContent.trim();
+      const correspondingMobileLink = Array.from(mobileNavLinks).find(
+        mobileLink => mobileLink.textContent.trim() === linkText
+      );
+      if (correspondingMobileLink) {
+        setActiveLink(correspondingMobileLink, mobileNavLinks);
+      }
+    });
+  });
+  
+  // Event listeners para enlaces móvil
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      setActiveLink(this, mobileNavLinks);
+      
+      // También actualizar el enlace correspondiente en desktop
+      const linkText = this.textContent.trim();
+      const correspondingNavLink = Array.from(navLinks).find(
+        navLink => navLink.textContent.trim() === linkText
+      );
+      if (correspondingNavLink) {
+        setActiveLink(correspondingNavLink, navLinks);
+      }
+    });
+  });
+  
+  // Restaurar estado activo al cargar la página
+  const activePage = localStorage.getItem('activePage');
+  if (activePage) {
+    // Buscar y activar el enlace correspondiente en desktop
+    const activeNavLink = Array.from(navLinks).find(
+      link => link.textContent.trim() === activePage
+    );
+    if (activeNavLink) {
+      activeNavLink.classList.add('active');
+    }
+    
+    // Buscar y activar el enlace correspondiente en móvil
+    const activeMobileLink = Array.from(mobileNavLinks).find(
+      link => link.textContent.trim() === activePage
+    );
+    if (activeMobileLink) {
+      activeMobileLink.classList.add('active');
+    }
+  } else {
+    // Si no hay página activa guardada, activar "Inicio" por defecto
+    const homeNavLink = Array.from(navLinks).find(
+      link => link.textContent.trim() === 'INICIO'
+    );
+    const homeMobileLink = Array.from(mobileNavLinks).find(
+      link => link.textContent.trim() === 'INICIO'
+    );
+    
+    if (homeNavLink) homeNavLink.classList.add('active');
+    if (homeMobileLink) homeMobileLink.classList.add('active');
+  }
+});
+</script>
