@@ -19,8 +19,8 @@ body {
   --muted:#667085;
 
   --radius-xl:20px;
-  --shadow:0 10px 30px rgba(0,0,0,.08);
-  --maxw:1200px;
+  --shadow:0 10px 5px rgba(0,0,0,.08);
+  --maxw:12000px;
 }
 
 /* Utilities */
@@ -35,30 +35,33 @@ body {
   .md\\:show { display:initial; }
 }
 
+
 /* Buttons */
 .btn {
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  display:inline-flex; align-items:center; justify-content:center; gap: 9px;
   padding: 12px 20px; border-radius: var(--radius-xl);
   font-weight:600; text-decoration:none; border:1px solid transparent;
   transition: .2s ease;
 }
-.btn--primary{ background: var(--brand-orange); color: #fff; box-shadow: var(--shadow); }
-.btn--primary:hover{ opacity:.9; }
+
+
+.btn--primary{ background: var(--brand-orange); color: #fff; font-size: 15px;  padding: 8px 20px; }
+.btn--primary:hover{ background:white; color: var(--brand-orange) }
 .btn--outline-blue{ background:#fff; color:var(--brand-blue); border-color:#d6e0f5; box-shadow: var(--shadow); }
 .btn--outline-blue:hover{ transform: translateY(-1px); }
 .btn--whatsapp{ background:#25D366; color:#fff; box-shadow: var(--shadow); }
 
+
 /* Card / Badge */
 .card{
-  background:#fff; border:1px solid #eef0f3; border-radius: var(--radius-xl);
-  box-shadow: var(--shadow); padding: 24px;
-}
-.badge{
-  display:inline-flex; align-items:center; gap:8px;
-  background: var(--brand-orangelight); color: var(--brand-orange);
-  font-weight:600; font-size: 0.9rem; padding: 6px 12px; border-radius: 999px;
+  background:#fff; border:1px solid var(--brand-orange); border-radius: var(--radius-xl);
+  box-shadow: var(--shadow); padding: 25px;
+
 }
 
+.card:hover,.btn--primary{
+  background-color: var(--brand-orange);
+}
 /* Header / Navbar */
 .header{
   position: sticky; top:0; z-index:40;
@@ -142,4 +145,11 @@ body {
 .section__title .accent{ color: var(--brand-orange); }
 .section__subtitle{ text-align:center; color:var(--muted); margin: 6px 0 24px; }
 
-.plans{ display:grid; gap:20px; grid-template-columns:1fr; }
+.plans{ display:grid; gap:20px;  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
+
+.plancard__action {
+  display: flex;
+  align-items: center;  
+  gap: 12px;          
+  text-decoration: none;
+}
