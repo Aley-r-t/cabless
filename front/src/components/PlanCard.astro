@@ -1,3 +1,4 @@
+
 ---
 const { speed = "50 Mbps", price = 50 } = Astro.props;
 ---
@@ -7,23 +8,23 @@ const { speed = "50 Mbps", price = 50 } = Astro.props;
     style="font-size: 16px;font-weight:500; gap: 0.3em">
 <span>
   <center>
-  <svg 
-    width="1em" height="1em" viewBox="0 0 24 24"
-    fill="none" xmlns="http://www.w3.org/2000/svg"
-    stroke="#ff6a00" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="6" width="20" height="14" rx="2" ry="2" />
-
-    <line x1="10" y1="6" x2="7" y2="2" />
-    <line x1="14" y1="6" x2="17" y2="2" />
+<svg class="icono_cards"
+  width="1em" height="1em" viewBox="0 0 24 24"
+  fill="none" xmlns="http://www.w3.org/2000/svg"
+  stroke="currentColor" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="6" width="19" height="14" rx="2" ry="2" />
+  <line x1="10" y1="6" x2="7" y2="2" />
+  <line x1="14" y1="6" x2="17" y2="2" />
+</svg>
   </svg>
   Cable HD
 </span>
-    <span style="color:var(--brand-orange); font-size: 25px;" ><br>+<br></span>
+    <span class="suma" style="font-size: 20px;" ><br>+<br></span>
  <span >
-  <svg 
+  <svg class="icono_cards"
     width="1.1em" height="1.3em" viewBox="4 8 16 16" 
     fill="none" xmlns="http://www.w3.org/2000/svg"
-    stroke="#ff6a00" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M5 12.5C8 9.5 16 9.5 19 12.5" />
     <path d="M8.5 16C10.5 14 13.5 14 15.5 16" />
     <path d="M12 19.5h0.9" /> 
@@ -55,7 +56,7 @@ const { speed = "50 Mbps", price = 50 } = Astro.props;
 
   <span class="whatsapp-icon">
     <img
-      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      src="/cabless/front/src/assets"
       alt="WhatsApp"
       width="40"
       height="40"
