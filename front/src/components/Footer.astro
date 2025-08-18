@@ -13,13 +13,13 @@
       <!-- Columna 1: Logo y descripción -->
       <div class="footer-column">
         <!-- Espacio para logo -->
+        <div class="footer-logo">
+          <a href="/">
+            <img src="/logoblanco.png" alt="Logo Cable Laser" class="logo-img" />
+          </a>
+        </div>
         
-        <img class="logo-placeholder" src="./logoblanco.png" alt="Logo-png">
         
-        <!-- Descripción -->
-        <p class="description">
-          Somos una empresa peruana de telecomunicaciones y brindamos servicios para el hogar y/o negocios.
-        </p>
         
         <!-- Redes sociales -->
         <div class="social-icons">
@@ -37,6 +37,9 @@
           <li>
             <a href="#">¿Quienes somos?</a>
           </li>
+          <p class="description">
+          Somos una empresa peruana de telecomunicaciones y brindamos servicios para el hogar y/o negocios.
+          </p>
         </ul>
       </div>
       
@@ -130,17 +133,10 @@
   min-width: 250px;
 }
 
-/* Logo placeholder */
-.logo-placeholder {
+.footer-logo img.logo-img {
   width: 200px;
-  height: 64px;
-  border: 2px ;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
+  height: auto;
+  display: block;
   margin-bottom: 24px;
 }
 
