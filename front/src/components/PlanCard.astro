@@ -1,5 +1,8 @@
 
 ---
+import { Image } from 'astro:assets';
+import WhatsAppImage from '../assets/WhatsApp.webp';
+
 const { speed = "50 Mbps", price = 50 } = Astro.props;
 ---
 <div class="card">
@@ -40,7 +43,7 @@ const { speed = "50 Mbps", price = 50 } = Astro.props;
 
   <span class="mensual" style=font-size:25px;font-weight:500;">Mensual</span></div></center>
 </center>
-<center><div class="plancard__foot" style="font-style: italic; font-weight: 400;">*Instalación gratuita</div>
+<center><div class="plancard__foot" style="font-style: italic; font-size:14px; font-weight: 400;">*Instalación gratuita</div>
 
 
 <section class="position_actions">
@@ -54,16 +57,14 @@ const { speed = "50 Mbps", price = 50 } = Astro.props;
 
   <span class="btn btn--primary plancard__btn">Lo quiero</span>
 
-  <span class="whatsapp-icon">
-    <img
-      src="/cabless/front/src/assets"
-      alt="WhatsApp"
-      width="40"
-      height="40"
-    />
-  </span>
+<span class="whatsapp-icon">
+  <Image 
+    src={WhatsAppImage}
+    alt="WhatsApp"
+    width={40}
+    height={40}
+  />
+</span>
 </a>
 </section>
-
-
 </div>
