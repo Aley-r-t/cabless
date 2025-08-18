@@ -1,0 +1,61 @@
+---
+export interface Props {
+  palabras: string[];        // Lista de palabras a pintar en los botones
+  class?: string;            // Clase opcional para el contenedor externo
+}
+const { palabras = [], class: cls = "" } = Astro.props;
+---
+
+<div class={`valores-grid ${cls}`}>
+  {palabras.map((p) => (
+    <div class="valor-item">
+      <button type="button" class="valor-pill">{p}</button>
+    </div>
+  ))}
+</div>
+
+<style>
+/* Layout del grid (flex, sin JS) */
+.valores-grid{
+  display:flex; flex-wrap:wrap; gap:12px;
+  align-items:flex-start;
+}
+
+/* Contenedor vertical del componente */
+.valor-item{
+  display:inline-flex; flex-direction:column; align-items:center;
+  gap:8px; margin:4px;
+}
+
+/* Div encima del botón */
+.valor-top{
+  font-size:12px; line-height:1; color:#6b7280;            /* gris suave */
+  text-transform:uppercase; letter-spacing:.04em;
+}
+
+/* Botón con borde naranja por defecto */
+.valor-pill{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 18px;
+  border:2px solid #ff6a00;                                /* naranja */
+  border-radius:14px;
+  background:#ffffff;                                      /* fondo blanco */
+  color:#111111;                                           /* texto oscuro */
+  font-weight:700; letter-spacing:.2px;
+  cursor:pointer;
+  transition:background-color .2s ease, color .2s ease,
+             box-shadow .2s ease, transform .05s ease;
+}
+
+/* Hover: fondo naranja y texto blanco */
+.valor-pill:hover{
+  background:#ff6a00; color:#ffffff;
+  box-shadow:0 6px 20px rgba(255,106,0,.25);
+}
+
+/* Accesibilidad y feedback */
+.valor-pill:focus-visible{
+  outline:none; box-shadow:0 0 0 3px rgba(255,106,0,.35);
+}
+.valor-pill:active{ transform:translateY(1px); }
+</style>

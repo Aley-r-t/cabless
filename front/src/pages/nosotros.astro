@@ -2,12 +2,31 @@
 import Navbar from "../components/Navbar.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Footer from "../components/Footer.astro";
+import QuienesSomosImg from "../components/QuienesSomosImg.astro";
+import Valores from "../components/Valores.astro";
+
+const palabras = ["Disciplina", "Ética", "Calidad", "Puntualidad", "Respeto", "Innovación"];
 ---
 
 <BaseLayout>
   <Navbar />
-        <h1> Hola Mundo </h1>
+        <QuienesSomosImg />
+        <h2 class="quienes-somos-text"><span class="quienes-somos-highlight"> Somos </span> una compañía peruana que diseña, despliega y opera soluciones para empresas que no pueden detenerse.</h2>
+        <!--   Aqui pueden ir algunas certificaciones ETC -->
+        <h1>
+          Valores
+        </h1>
+        <Valores palabras={palabras} />
   <Footer />
 </BaseLayout>
 
-
+<style>
+  .quienes-somos-text {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .quienes-somos-highlight {
+    color: #ff6a00; /* Example color */
+    font-weight: bold;
+  }
+</style>
