@@ -1,8 +1,8 @@
 ---
 const links = [
-  { href: "#", label: "Inicio" },
+  { href: "/", label: "Inicio" },
   { href: "#envivo", label: "EN VIVO" },
-  { href: "#nosotros", label: "Nosotros" },
+  { href: "/nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
   { href: "#cobertura", label: "Cobertura" },
 ];
@@ -10,11 +10,7 @@ const links = [
 <header class="header">
   <div class="container nav">
     <a href="/" class="brand" aria-label="Cable Laser">
-      <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="8" width="22" height="10" rx="5" fill="#153e7a"/>
-        <circle cx="26" cy="13" r="8" fill="#ff6a00"/>
-      </svg>
-      <span class="brand__text">Cable<span class="brand__accent">Laser</span></span>
+      <img src="/logo-1.png" alt="Cable Laser" />
     </a>
 
     <nav class="nav__links">
@@ -28,3 +24,18 @@ const links = [
     </a>
   </div>
 </header>
+
+<style>
+.brand{
+  margin-top: 10px;
+  width: 110px;
+  height: 55px;
+}
+.brand img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+</style>
