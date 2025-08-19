@@ -1,353 +1,146 @@
 ---
-// Footer.astro
+import { Image } from "astro:assets";
+import ReclamacionesImage from "../assets/reclamaciones.png";
+import LineaNaranjaImage from "../assets/lineaNaranja.png";
+
 ---
-
-<footer class="cable-laser-footer">
-  <!-- Borde superior naranja -->
-  <div class="orange-border"></div>
-
-  <!-- Contenido principal -->
-  <div class="footer-content">
-    <div class="footer-container">
-      
-      <!-- Columna 1: Logo y descripción -->
-      <div class="footer-column">
-        <!-- Espacio para logo -->
-        <div class="footer-logo">
-          <a href="/">
-            <img src="/logoblanco.png" alt="Logo Cable Laser" class="logo-img" />
-          </a>
-        </div>
-        
-        <!-- Redes sociales -->
-        <div class="social-icon-container">
-          <img src="/public/facebook.svg" alt="Facebook" class="social-icons" />
-          <img src="/public/youtube.svg" alt="YouTube" class="social-icons" />
-          <img src="/public/lindin.svg" alt="LinkedIn" class="social-icons" />
-          <img src="/public/instagram.svg" alt="Instagram" class="social-icons" />
-        </div>
-      </div>
-      
-      <!-- Columna 2: Sobre Cable Laser -->
-      <div class="footer-column">
-        <h3 class="footer-title">Sobre Cable Laser</h3>
-        <ul class="footer-links">
-          <li>
-            <a href="#">¿Quienes somos?</a>
-          </li>
-          <p class="description">
+<footer class="cl-footer">
+  <Image class="cl-topbar" src={LineaNaranjaImage} alt="Línea Naranja" />
+  <div class="cl-wrap">
+    <div class="cl-grid">
+      <!-- Col 1: Logo + descripción + redes -->
+      <div class="cl-col cl-col--brand">
+        <a href="/" class="cl-logo">
+          <img src="/logoblanco.png" alt="Cable Laser" />
+        </a>
+        <p class="cl-desc">
           Somos una empresa peruana de telecomunicaciones y brindamos servicios para el hogar y/o negocios.
-          </p>
+        </p>
+        <ul class="cl-social" aria-label="Redes sociales">
+          <li><a aria-label="Facebook" href="#"><img src="/facebook.svg" alt="" /></a></li>
+          <li><a aria-label="YouTube" href="#"><img src="/youtube.svg" alt="" /></a></li>
+          <li><a aria-label="LinkedIn" href="#"><img src="/lindin.svg" alt="" /></a></li>
+          <li><a aria-label="Instagram" href="#"><img src="/instagram.svg" alt="" /></a></li>
         </ul>
       </div>
-      
-      <!-- Columna 3: Ayuda -->
-      <div class="footer-column">
-        <h3 class="footer-title">Ayuda</h3>
-        <ul class="footer-links">
+
+      <!-- Col 2: Sobre + Contacto -->
+      <div class="cl-col">
+        <h3 class="cl-title">Sobre Cable Laser</h3>
+        <ul class="cl-links">
+          <li><a href="#">¿Quiénes somos?</a></li>
+        </ul>
+
+        <div class="cl-box mt-24">
+          <h3 class="cl-title">Contacto</h3>
+          <ul class="cl-contact">
+            <li><strong>Información:</strong> <a href="tel:+51932555005">932 555 005</a></li>
+            <li><strong>Ventas:</strong> <a href="tel:+51934475748">934 475 748</a></li>
+            <li><strong>Cobranza:</strong> <a href="tel:+51989367809">989 367 809</a></li>
+          </ul>
+
+          <div class="cl-claims">
+            <p class="cl-claims-title">LIBRO DE<br/>RECLAMACIONES</p>
+            <div class="cl-claims-icon">
+              <Image src={ReclamacionesImage} alt="Libro de Reclamaciones" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Ayuda -->
+      <div class="cl-col">
+        <h3 class="cl-title">Ayuda</h3>
+        <ul class="cl-links">
           <li><a href="#">Preguntas frecuentes</a></li>
           <li><a href="#">Cobertura</a></li>
           <li><a href="#">Contacto</a></li>
           <li><a href="#">Número de Cuenta</a></li>
         </ul>
-        
-        <!-- Libro de reclamaciones -->
-        <div class="book-section">
-          <p class="book-title">
-            LIBRO DE<br>RECLAMACIONES
-          </p>
-          <div class="book-icon">
-            [Libro]
-          </div>
-        </div>
       </div>
-      
-      <!-- Columna 4: Dirección y Contacto -->
-      <div class="footer-column">
-        <!-- Dirección -->
-        <div class="address-section">
-          <h3 class="footer-title">Dirección</h3>
-          <div class="contact-info">
-            <p>Mz "N" Lt 41</p>
-            <p>Miguel Grau - Chaclacayo</p>
-          </div>
-        </div>
-        
-        <!-- Contacto -->
-        <div class="contact-section">
-          <h3 class="footer-title">Contacto</h3>
-          <div class="contact-info">
-            <p>Información: 932 555 005</p>
-            <p>Ventas: 934 475 748</p>
-            <p>Cobranza: 989 367 809</p>
-          </div>
-        </div>
+
+      <!-- Col 4: Dirección -->
+      <div class="cl-col">
+        <h3 class="cl-title">Dirección</h3>
+        <address class="cl-address">
+          <p>Mz “N” Lt 41</p>
+          <p>Miguel Grau - Chaclacayo</p>
+        </address>
       </div>
-      
     </div>
   </div>
-  
-  <!-- Footer bottom -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-container">
-      <p class="copyright">Copyright © 2025 Cable Laser</p>
-      <a href="#" class="terms-link">Términos y condiciones</a>
+
+  <div class="cl-bottombar">
+    <div class="cl-bottom">
+      <p>Copyright © 2025 Cable Laser</p>
+      <a href="#" class="cl-terms">Términos y condiciones</a>
     </div>
   </div>
 </footer>
 
 <style>
+/* Base */
+.cl-footer{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif;background:#0C1D46;color:#fff}
+.cl-topbar{height:105px;width:100%;background:#EA580C}
 
-.social-icon-container{
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-}
+/* Contenedor */
+.cl-wrap{padding:56px 24px}
+.cl-grid{max-width:1280px;margin:0 auto;display:grid;gap:36px;
+  grid-template-columns:2fr 1fr 1fr 1fr;align-items:start}
 
-.social-icons{
-  width: 80px;
-  height: 80px;
-}
+/* Columna marca (más ancha) */
+.cl-col--brand .cl-logo img{width:260px;height:auto;display:block}
+.cl-desc{margin:16px 0 20px;color:rgba(255,255,255,.9);font-size:15px;line-height:1.6;max-width:420px}
 
-/* Reset y base */
-.cable-laser-footer {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: #0C1D46;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
+/* Redes sociales */
+.cl-social{display:flex;gap:14px;list-style:none;padding:0;margin:0}
+.cl-social a{display:grid;place-items:center;width:44px;height:44px;border:1.5px solid rgba(255,255,255,.7);
+  border-radius:50%;background:transparent;transition:background .2s,transform .05s}
+.cl-social img{width:20px;height:20px;display:block;filter:invert(1)}
+.cl-social a:hover{background:rgba(255,255,255,.12)}
+.cl-social a:active{transform:translateY(1px)}
 
-/* Borde superior naranja */
-.orange-border {
-  height: 8px;
-  background-color: #ea580c;
-}
+/* Títulos / listas */
+.cl-title{font-size:18px;font-weight:700;margin:0 0 14px}
+.cl-links{list-style:none;padding:0;margin:0}
+.cl-links li{margin:8px 0}
+.cl-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px}
+.cl-links a:hover{color:#fff}
 
-/* Contenido principal */
-.footer-content {
-  padding: 48px 24px;
-}
-
-.footer-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-
-/* Columnas del footer */
-.footer-column {
-  flex: 1;
-  min-width: 250px;
-}
-
-.footer-logo img.logo-img {
-  width: 200px;
-  height: auto;
-  display: block;
-  margin-bottom: 24px;
-}
-
-/* Descripción */
-.description {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 24px;
-  margin-top: 0;
-}
-
-/* azul navy */
-.social-icons{
-  background: #0a2a5a;       /* azul navy */
-  padding: 14px 16px;
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* círculo base */
-.social-icon{
-  width: 86px;
-  height: 86px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  position: relative;
-  display: grid;
-  place-items: center;
-  color: transparent;        /* oculta el texto FB/YT/LI/IG */
-  text-indent: -9999px;      /* por si acaso */
-  overflow: hidden;
-}
-/* Hover opcional */
-
-/* azul navy */
-/* Títulos de secciones */
-.footer-title {
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  margin-top: 0;
-}
-
-/* Enlaces del footer */
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 8px;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: white;
-}
+/* Contacto + libro */
+.cl-box{position:relative}
+.mt-24{margin-top:24px}
+.cl-contact{list-style:none;padding:0;margin:0}
+.cl-contact li{margin:6px 0;font-size:14px;color:rgba(255,255,255,.9)}
+.cl-contact a{color:#fff;text-decoration:none}
+.cl-contact a:hover{text-decoration:underline}
 
 /* Libro de reclamaciones */
-.book-section {
-  margin-top: 32px;
-}
+.cl-claims{display:flex;align-items:center;gap:12px;margin-top:16px}
+.cl-claims-title{font-size:12px;letter-spacing:.4px;margin:0;text-align:left;line-height:1.2}
+.cl-claims-icon{width:64px;height:48px;border:2px dashed rgba(255,255,255,.35);
+  border-radius:6px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08)}
+.cl-claims-icon img{max-width:50px;height:auto}
 
-.book-title {
-  color: white;
-  font-size: 12px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 12px;
-  margin-top: 0;
-}
+/* Dirección */
+.cl-address{font-style:normal;color:rgba(255,255,255,.9);font-size:14px}
+.cl-address p{margin:4px 0}
 
-.book-icon {
-  width: 64px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0 auto;
-}
+/* Bottom bar */
+.cl-bottombar{background:#01247C}
+.cl-bottom{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.cl-bottom p{margin:0;color:rgba(255,255,255,.85);font-size:14px}
+.cl-terms{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px}
+.cl-terms:hover{color:#fff}
 
-/* Secciones de dirección y contacto */
-.address-section, .contact-section {
-  margin-bottom: 32px;
+/* Responsive */
+@media (max-width:1024px){
+  .cl-grid{grid-template-columns:1fr 1fr}
 }
-
-.contact-info {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-}
-
-.contact-info p {
-  margin: 4px 0;
-}
-
-/* Footer bottom */
-.footer-bottom {
-  background-color: #01247C;
-  padding: 16px 24px;
-}
-
-.footer-bottom-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.copyright {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  margin: 0;
-}
-
-.terms-link {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.terms-link:hover {
-  color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .footer-container {
-    flex-direction: column;
-  }
-  
-  .footer-column {
-    min-width: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    padding: 32px 16px;
-  }
-  
-  .footer-container {
-    gap: 24px;
-  }
-  
-  .footer-bottom-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .logo-placeholder {
-    width: 100%;
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-content {
-    padding: 24px 12px;
-  }
-  
-  .social-icons {
-    justify-content: center;
-  }
-  
-  .footer-column {
-    text-align: center;
-  }
-}
-
-/* Para pantallas grandes - layout horizontal */
-@media (min-width: 1025px) {
-  .footer-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  
-  .footer-column {
-    flex: 1;
-    max-width: 25%;
-  }
+@media (max-width:768px){
+  .cl-wrap{padding:40px 16px}
+  .cl-grid{grid-template-columns:1fr}
+  .cl-col--brand .cl-logo img{width:220px}
+  .cl-bottom{flex-direction:column;text-align:center}
 }
 </style>
