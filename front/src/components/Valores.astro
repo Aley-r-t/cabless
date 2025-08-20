@@ -23,7 +23,7 @@ const { palabras = [], class: cls = "" } = Astro.props;
 
 /* Contenedor vertical del componente */
 .valor-item{
-  display:inline-flex; flex-direction:column; align-items:center;
+  display:inline-flex; flex-direction:row; align-items:center;
   gap:8px; margin:4px;
 }
 
@@ -58,4 +58,20 @@ const { palabras = [], class: cls = "" } = Astro.props;
   outline:none; box-shadow:0 0 0 3px rgba(255,106,0,.35);
 }
 .valor-pill:active{ transform:translateY(1px); }
+.valores-grid {
+  display: flex;
+  flex-wrap: wrap;         /* que los botones salten a otra fila si no entran */
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* alinea verticalmente dentro de cada fila */
+  gap: 16px;               /* espacio entre botones */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.valor-item {
+  display: flex;           /* ya no columna */
+  align-items: center;
+  justify-content: center;
+  margin: 0;               /* sin márgenes extras */
+}
 </style>

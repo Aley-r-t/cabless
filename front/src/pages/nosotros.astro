@@ -13,14 +13,18 @@ const palabras = ["Disciplina", "Ética", "Calidad", "Puntualidad", "Respeto", "
         <QuienesSomosImg />
         <h2 class="quienes-somos-text"><span class="quienes-somos-highlight"> Somos </span> una compañía peruana que diseña, despliega y opera soluciones para empresas que no pueden detenerse.</h2>
         <!--   Aqui pueden ir algunas certificaciones ETC -->
-        <h1>
+        <h1 class="valores_litle">
           Valores
         </h1>
-        <Valores palabras={palabras} />
+        <Valores class="valor-item" palabras={palabras} />
   <Footer />
 </BaseLayout>
 
 <style>
+  .valores_litle {
+    text-align: center;
+    color:  01247C;
+  }
   .quienes-somos-text {
     text-align: center;
     margin: 20px 0;
