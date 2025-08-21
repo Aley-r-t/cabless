@@ -1,10 +1,44 @@
 ---
-const flamePrice = 50;
+import { Image } from 'astro:assets';
+import Inicio_imagen from '../assets/inicio_img.png';
 ---
 <section>
-  <div>
-    <div class="frame">
-        <img src="/image.png" alt="Pareja disfrutando TV e Internet" />
+      <div class="frame">
+          <Image 
+    src={Inicio_imagen}
+    alt="inicio"
+  />
     </div>
-  </div>
 </section>
+<style>
+
+@media (max-width: 1068px) {
+  .frame img {
+    height: 490px; 
+  }
+}
+@media (max-width: 868px) {
+  .frame img {
+    height: 350px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .frame img {
+    height:258px; 
+  }
+}
+
+@media (max-width: 400px) {
+  .frame img {
+    height:215px; 
+  }
+}
+
+
+@media (max-width: 280px) {
+  .frame img {
+    height: 150px; 
+  }
+}
+</style>

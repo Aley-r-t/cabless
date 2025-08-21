@@ -2,6 +2,10 @@
 import { Image } from "astro:assets";
 import ReclamacionesImage from "../assets/reclamaciones.png";
 import LineaNaranjaImage from "../assets/lineaNaranja.png";
+import Facebook from "../assets/facebook.png";
+import Youtube from "../assets/youtube.png";
+import Linkd from "../assets/lindin.png";
+import Instagram from "../assets/instagram.png"; 
 
 ---
 <footer class="cl-footer">
@@ -17,10 +21,10 @@ import LineaNaranjaImage from "../assets/lineaNaranja.png";
           Somos una empresa peruana de telecomunicaciones y brindamos servicios para el hogar y/o negocios.
         </p>
         <ul class="cl-social" aria-label="Redes sociales">
-          <li><a aria-label="Facebook" href="#"><img src="/facebook.svg" alt="" /></a></li>
-          <li><a aria-label="YouTube" href="#"><img src="/youtube.svg" alt="" /></a></li>
-          <li><a aria-label="LinkedIn" href="#"><img src="/lindin.svg" alt="" /></a></li>
-          <li><a aria-label="Instagram" href="#"><img src="/instagram.svg" alt="" /></a></li>
+          <li><a aria-label="Facebook" href="#"><Image src={Facebook} alt={"Facebook"}></Image></a></li>
+          <li><a aria-label="YouTube" href="#"><Image src={Youtube} alt={"Youtube"}></Image></a></li>
+          <li><a aria-label="LinkedIn" href="#"><Image src={Linkd} alt={"LinkedLin"}></a></li>
+          <li><a aria-label="Instagram" href="#"><Image src={Instagram} alt={"Instagram"}></a></li>
         </ul>
       </div>
 
@@ -93,12 +97,45 @@ import LineaNaranjaImage from "../assets/lineaNaranja.png";
 .cl-desc{margin:16px 0 20px;color:rgba(255,255,255,.9);font-size:15px;line-height:1.6;max-width:420px}
 
 /* Redes sociales */
-.cl-social{display:flex;gap:14px;list-style:none;padding:0;margin:0}
-.cl-social a{display:grid;place-items:center;width:44px;height:44px;border:1.5px solid rgba(255,255,255,.7);
-  border-radius:50%;background:transparent;transition:background .2s,transform .05s}
-.cl-social img{width:20px;height:20px;display:block;filter:invert(1)}
-.cl-social a:hover{background:rgba(255,255,255,.12)}
-.cl-social a:active{transform:translateY(1px)}
+
+.cl-social {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cl-social a {
+  display: grid;
+  place-items: center;
+  width: 45px; 
+  height: 45px; 
+  border-radius: 50%;
+  background: transparent;
+  position: relative;
+}
+
+.cl-social img {
+  width: 40px; 
+  height: 38px;
+  display: block;
+  transition: transform .2s ease-in-out;
+}
+
+.cl-social a:hover {
+  background: #ff6a00d5;
+  box-shadow: 0 0 10px var(---orange); 
+  transform: scale(1); 
+}
+
+.cl-social a:active {
+  transform: translateY(1px);
+}
+
+.cl-social a:hover img {
+  transform: scale(1.2);
+}
 
 /* Títulos / listas */
 .cl-title{font-size:18px;font-weight:700;margin:0 0 14px}
