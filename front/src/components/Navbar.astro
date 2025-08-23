@@ -20,12 +20,14 @@ const links = [
     <nav class="nav__links">
       {links.map((l) => <a class="nav__link" href={l.href}>{l.label}</a>)}
     </nav>
+
     <a href="tel:017481950" class="btn btn--outline-blue nav__cta hidden md:show" aria-label="Llámanos">
-      <!-- phone icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.15.38 2.34.57 3.56.57a1 1 0 011 1V20a1 1 0 01-1 1C10.42 21 3 13.58 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.22.19 2.41.57 3.56a1 1 0 01-.25 1.05l-2.2 2.18z"/></svg>
-      Ventas: 01 7481950
-    </a>
-   
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.15.38 2.34.57 3.56.57a1 1 0 011 1V20a1 1 0 01-1 1C10.42 21 3 13.58 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.22.19 2.41.57 3.56a1 1 0 01-.25 1.05l-2.2 2.18z"/>
+  </svg>
+  <span class="text-sales">Ventas:</span> <span>01 7481950</span>
+</a>
+
   </div>
 </header>
 
@@ -64,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style>
 
+/* Cambio del botón */
 .btn{
   padding: 12px 20px;
   border-radius: var(--radius-xl);
@@ -73,13 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
   margin-right: 50px;
   background-color: var(---blue);
   color: var(---light);
-}
-
+   display: flex;
+  align-items: center; 
+  gap: 8px;
+   white-space: nowrap; }
+   
 .brand{
   margin-top: 10px;
   width: 110px;
   height: 60px;
-  margin-left: 100px;
+  flex-shrink: 0;
+  margin-left: 5%;
 }
 
 .brand img{
@@ -88,6 +95,150 @@ document.addEventListener('DOMContentLoaded', () => {
   object-fit: contain;
 }
 
-/* Repsonsive */
 
-</style>
+/* Repsonsive */
+/* Botón de Ventas */
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 15px;
+  }
+  .btn .text-sales {
+    display: none;
+  }
+  .btn span {
+    font-size: 0.875rem;  
+  }
+
+  .btn svg {
+    width: 20px;  
+    height: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .btn {
+    padding: 12px 20px;  }
+
+  .btn .text-sales {
+    display: inline;
+  }
+
+  .btn svg {
+    width: 20px;  
+    height: 20px;
+  }
+
+}
+
+/* Logo  y letras*/
+
+@media (max-width: 1000px) {
+  .brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+  }
+    .nav__links{
+    gap: 50px;
+    margin-inline: 30px;
+  }
+
+}
+
+@media (max-width: 960px) {
+  .nav__links{
+    gap: 50px;
+    margin-inline: 25px;
+  }
+    .nav__link{
+  font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .brand {
+    width: 910px; 
+    height: 20px;
+    margin-left: -40%;
+  }
+
+  .brand img {
+    width: 150%;
+    height: 100%;
+    object-fit: contain; 
+  }
+
+}
+
+@media (max-width: 890px) {
+  .brand {
+    width: 80px; 
+    height: 45px;
+    margin-left: -1%;
+  }
+   .brand img {
+    width: 170%;
+    height: 100%;
+    object-fit: contain; 
+  }
+    .nav__links{
+    gap: 40px;
+    margin-inline: 80px;
+  }
+    .nav__link{
+  font-size: 14px;
+  }
+}
+@media (max-width:870px){
+    .nav__links{
+    gap: 40px;
+    margin-inline: 0px;
+  }
+
+}
+@media (max-width: 860px) {
+  .brand {
+    margin-left: -50%;
+  }
+   .brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+  }
+}
+
+@media (max-width: 790px) {
+  .brand {
+    width: 80px; 
+    height: 45px;
+    margin-left: -58%;
+  }
+}
+@media (max-width: 750px) {
+  .brand {
+    width: 80px; 
+    height: 45px;
+    margin-left: -55%;
+  }
+}
+@media (max-width: 600px) {
+  .brand {
+    width: 80px; 
+    height: 45px;
+    margin-left:-30%;
+  }
+}
+
+@media (max-width: 580px) {
+  .brand {
+    width: 80px; 
+    height: 45px;
+    margin-left:-15%;
+  }
+  @media (max-width: 500px) {
+  .brand {
+    width: 80px; 
+    height: 45px;
+    margin-left:-5%;
+  }
+}
+}
