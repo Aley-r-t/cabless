@@ -1,5 +1,7 @@
 ---
 import PlanCard from "./PlanCard.astro";
+import { Image } from 'astro:assets';
+import Crisalix from '../assets/chatbot.png';
 ---
 <section class="section">
   <div class="container">
@@ -13,15 +15,76 @@ import PlanCard from "./PlanCard.astro";
       <PlanCard speed="400 Mbps" price={140} />
     </div>
 
-    <div class="ctarow">
-      <a href="tel:017481950" class="btn btn--outline-blue">📞 Llámanos al <strong>&nbsp;01 7481950</strong></a>
-      <a href="https://wa.me/51999999999?text=Hola,%20quiero%20saber%20sobre%20los%20planes%20dúo" class="btn btn--whatsapp">WhatsApp Ventas</a>
+<section class="ctarow">
+  <a href="tel:017481950" class="btn btn--outline-blue">
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="currentColor"> <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.15.38 2.34.57 3.56.57a1 1 0 011 1V20a1 1 0 01-1 1C10.42 21 3 13.58 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.22.19 2.41.57 3.56a1 1 0 01-.25 1.05l-2.2 2.18z" stroke="currentColor" stroke-width="0.7"/> </svg>
+    <div class="text">
+      <span class="label">Llámanos al:</span>
+      <p>01 7481950</p>
     </div>
-  </div>
+  </a>
+
+<a href="" class="btn btn--crisalix">
+  <Image src={Crisalix} alt="Crisalix" width={45} height={50} />
+  Crisalix
+</a>
+
 </section>
 
 <style>
-.accent{
-  color: #ea580c;
+.ctarow {
+  position: fixed;
+  top: 50%;
+  right: 20px; 
+  transform: translateY(-50%);
+  display: flex;
+  gap: 20px;
+  flex-direction: column; 
+  z-index: 1000; 
 }
+
+
+.btn--outline-blue {
+  display: inline-flex;
+  align-items: center;
+  padding: 17px 24px; 
+  padding-bottom:1px ;
+  text-decoration: none;
+  box-shadow: 0 5px 5px rgba(111, 109, 124, 0.518);
+}
+.btn svg {
+  color: var(---blue);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.4;
+}
+
+.text .label ,p {
+  color: var(---blue);
+  font-size: 20px;
+}
+
+.btn--crisalix {
+  align-items: center;
+  gap: 8px;
+  padding: 10px 25px;
+  font-size: 20px;
+  color: var(---blue);
+  background-color: #ffffff;
+  border-color:#d6e0f5; 
+  box-shadow: 0 5px 5px rgba(111, 109, 124, 0.518);
+  text-decoration: none;
+  border-radius: 20px; 
+}
+
+.btn--crisalix:hover {
+  transform: translateY(-1px); 
+  color: var(---orange);
+  border: 1px solid #f59f1551;
+  box-shadow: 0 6px 8px rgba(244, 114, 0, 0.433);
+}
+
 </style>
