@@ -1,19 +1,26 @@
-
-
+---
+import { Image } from "astro:assets";
+import quienesSomos from "../assets/quienesSomos.png";
+---
 
 <div class="quienes-somos-container">
-    <img src="/public/quienesSomos.png" alt="Quienes Somos" class="quienes-somos-img" />
+    <Image
+        src={quienesSomos}
+        alt="Quienes Somos"
+        class="quienes-somos-img"
+        loading="lazy"
+        format="webp"
+    />
 </div>
 
 <style>
     .quienes-somos-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .quienes-somos-img {
         max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .quienes-somos-img {
+        width: 100%;
         height: auto;
     }
 </style>

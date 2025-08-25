@@ -4,33 +4,63 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Footer from "../components/Footer.astro";
 import QuienesSomosImg from "../components/QuienesSomosImg.astro";
 import Valores from "../components/Valores.astro";
+import DreamBanner from "../components/Dreambanner.astro";
 
-const palabras = ["Disciplina", "Ética", "Calidad", "Puntualidad", "Respeto", "Innovación"];
+import Stats from "../components/Stats.astro";
+import Misionvision from "../components/Misionvision.astro";
+
+const palabras = [
+  "Disciplina",
+  "Ética",
+  "Calidad",
+  "Puntualidad",
+  "Respeto",
+  "Innovación",
+];
 ---
 
 <BaseLayout>
   <Navbar />
-        <QuienesSomosImg />
-        <h2 class="quienes-somos-text"><span class="quienes-somos-highlight"> Somos </span> una compañía peruana que diseña, despliega y opera soluciones para empresas que no pueden detenerse.</h2>
-        <!--   Aqui pueden ir algunas certificaciones ETC -->
-        <h1 class="valores_litle">
-          Valores
-        </h1>
-        <Valores class="valor-item" palabras={palabras} />
+  <QuienesSomosImg />
+  <h2 class="quienes-somos-text">
+    <span class="quienes-somos-highlight"> Somos </span> una compañía peruana que
+    diseña, despliega y opera soluciones para empresas que no pueden detenerse.
+  </h2>
+  <!--   Aqui pueden ir algunas certificaciones ETC -->
+
+  <DreamBanner />
+
+  <h1 class="valores_litle">Nuestros Valores</h1>
+
+  <Valores class="valor-item" palabras={palabras} />
+
+  <Stats />
+
+  <Misionvision />
+
+  
   <Footer />
 </BaseLayout>
 
 <style>
   .valores_litle {
     text-align: center;
-    color:  01247C;
+    color: 01247C;
+    margin: 38px 40px;
+    font-size: 50px;
+    font-weight: 900; 
+    font-style: italic; 
   }
   .quienes-somos-text {
     text-align: center;
-    margin: 20px 0;
+    margin: 38px 40px;
+    font-size: 40px;
   }
   .quienes-somos-highlight {
     color: #ff6a00; /* Example color */
     font-weight: bold;
   }
+
+
+
 </style>

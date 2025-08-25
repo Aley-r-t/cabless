@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import mensaje from "../assets/mensaje.png";
+import hacerclic from "../assets/hacerclic.png";
+
+const mision = {
+  titulo: "MISIÓN",
+  icono: mensaje,
+  texto: "Ofrecer servicios de telecomunicaciones innovadores y accesibles que mejoren la vida de las personas y fortalezcan la conectividad en el Perú.",
+};
+
+const vision = {
+  titulo: "VISIÓN",
+  icono: hacerclic,
+  texto: "Ser reconocidos como la empresa líder en servicios de telecomunicaciones en el Perú, destacando por nuestra excelencia operativa, innovación tecnológica y compromiso con la satisfacción de nuestros clientes.",
+};
+---
+
+<div class="mision-vision-container">
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-box">
+        <Image src={mision.icono} alt="Icono de Misión" width={30} height={30} />
+      </div>
+      <h2 class="card-title">{mision.titulo}</h2>
+    </div>
+    <p class="card-text">{mision.texto}</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-box">
+        <Image src={vision.icono} alt="Icono de Visión" width={30} height={30} />
+      </div>
+      <h2 class="card-title">{vision.titulo}</h2>
+    </div>
+    <p class="card-text">{vision.texto}</p>
+  </div>
+</div>
+
+<style>
+  .mision-vision-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+  }
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .icon-box {
+    background-color: #0c1d46;
+    padding: 12px;
+    border-radius: 8px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6a00;
+    margin: 0;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    color: #6a6a6a;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    .mision-vision-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 450px;
+    }
+  }
+</style>

@@ -1,77 +1,135 @@
 ---
-export interface Props {
-  palabras: string[];        // Lista de palabras a pintar en los botones
-  class?: string;            // Clase opcional para el contenedor externo
-}
-const { palabras = [], class: cls = "" } = Astro.props;
+import { Image } from "astro:assets";
+import eticaImg from "../assets/etica.png";
+import puntualidadImg from "../assets/puntualidad.png";
+import calidadImg from "../assets/calidad.png";
+import disciplinaImg from "../assets/disciplina.png";
+import respetoImg from "../assets/respeto.png";
+import innovacionImg from "../assets/innovacion.png";
+
+const valores = [
+  {
+    titulo: "Ética Profesional",
+    descripcion: "Actuamos con integridad, incluso cuando nadie mira.",
+    imagen: eticaImg,
+  },
+  {
+    titulo: "Puntualidad",
+    descripcion: "Cumplimos plazos, no excusas.",
+    imagen: puntualidadImg,
+  },
+  {
+    titulo: "Calidad",
+    descripcion: "Pixel-Perfect y sin humo: resultados que se notan.",
+    imagen: calidadImg,
+  },
+  {
+    titulo: "Disciplina",
+    descripcion: "Procesos claros: mejora continua todos los días.",
+    imagen: disciplinaImg,
+  },
+  {
+    titulo: "Respeto",
+    descripcion: "Trato humano, feedback directo y empático.",
+    imagen: respetoImg,
+  },
+  {
+    titulo: "Innovación",
+    descripcion: "Probamos, medimos, iteramos siempre en casa.",
+    imagen: innovacionImg,
+  },
+];
 ---
 
-<div class={`valores-grid ${cls}`}>
-  {palabras.map((p) => (
-    <div class="valor-item">
-      <button type="button" class="valor-pill">{p}</button>
-    </div>
-  ))}
+<div class="valores-grid">
+  {
+    valores.map((valor) => (
+      <div class="valor-card">
+        <div class="icon-container">
+          <Image src={valor.imagen} alt={valor.titulo} width={50} height={50} />
+        </div>
+        <h3 class="valor-titulo">{valor.titulo}</h3>
+        <p class="valor-descripcion">{valor.descripcion}</p>
+      </div>
+    ))
+  }
 </div>
 
 <style>
-/* Layout del grid (flex, sin JS) */
-.valores-grid{
-  display:flex; flex-wrap:wrap; gap:12px;
-  align-items:flex-start;
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+
+  .valor-card {
+    background-color: #f5f6f8; /* gris ligeramente más pronunciado */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* asegura alineación vertical */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 200px; /* altura mínima para consistencia */
+  }
+
+  .valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-container {
+    padding: 15px; /* padding ligeramente mayor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 80px; /* tamaño fijo para consistencia */
+    height: 90px;
+    flex-shrink: 0; /* evita que se comprima */
+  }
+
+  .valor-titulo {
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic; /* Aplica cursiva */
+  color: #0c1d46;
+  margin: 0 0 15px 0;
+  text-align: center;
 }
 
-/* Contenedor vertical del componente */
-.valor-item{
-  display:inline-flex; flex-direction:row; align-items:center;
-  gap:8px; margin:4px;
-}
 
-/* Div encima del botón */
-.valor-top{
-  font-size:12px; line-height:1; color:#6b7280;            /* gris suave */
-  text-transform:uppercase; letter-spacing:.04em;
-}
+  .valor-descripcion {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+  }
 
-/* Botón con borde naranja por defecto */
-.valor-pill{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:10px 18px;
-  border:2px solid #ff6a00;                                /* naranja */
-  border-radius:14px;
-  background:#ffffff;                                      /* fondo blanco */
-  color:#111111;                                           /* texto oscuro */
-  font-weight:700; letter-spacing:.2px;
-  cursor:pointer;
-  transition:background-color .2s ease, color .2s ease,
-             box-shadow .2s ease, transform .05s ease;
-}
-
-/* Hover: fondo naranja y texto blanco */
-.valor-pill:hover{
-  background:#ff6a00; color:#ffffff;
-  box-shadow:0 6px 20px rgba(255,106,0,.25);
-}
-
-/* Accesibilidad y feedback */
-.valor-pill:focus-visible{
-  outline:none; box-shadow:0 0 0 3px rgba(255,106,0,.35);
-}
-.valor-pill:active{ transform:translateY(1px); }
-.valores-grid {
-  display: flex;
-  flex-wrap: wrap;         /* que los botones salten a otra fila si no entran */
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* alinea verticalmente dentro de cada fila */
-  gap: 16px;               /* espacio entre botones */
-  width: 100%;
-  margin: 0 auto;
-}
-
-.valor-item {
-  display: flex;           /* ya no columna */
-  align-items: center;
-  justify-content: center;
-  margin: 0;               /* sin márgenes extras */
-}
+  /* Responsivo para pantallas pequeñas */
+  @media (max-width: 480px) {
+    .valores-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 0 15px;
+    }
+    
+    .valor-card {
+      padding: 25px;
+      min-height: auto;
+    }
+    
+    .icon-container {
+      width: 70px;
+      height: 70px;
+      padding: 12px;
+    }
+  }
 </style>

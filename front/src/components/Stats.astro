@@ -1,0 +1,125 @@
+<div class="stats-container">
+    <div class="stat-item">
+        <p class="stat-number">+9</p>
+        <p class="stat-label">Oficinas</p>
+    </div>
+    <div class="stat-item">
+        <p class="stat-number">+150</p>
+        <p class="stat-label">Colaboradores</p>
+    </div>
+    <div class="stat-item">
+        <p class="stat-number">+14 años</p>
+        <p class="stat-label">Experiencia</p>
+    </div>
+</div>
+
+<style>
+    .stats-container {
+        display: flex;
+        justify-content: space-evenly; /* Mejor distribución del espacio */
+        align-items: center;
+        background-color: #e6e6e6;
+        padding: 40px 20px;
+        margin: 40px 0; /* Quitar auto para usar todo el ancho */
+        width: 100%; /* Usar todo el ancho disponible */
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 15px;
+        flex: 1; /* Cada elemento ocupa igual espacio */
+        max-width: 300px; /* Limita el crecimiento excesivo */
+    }
+
+    .stat-number {
+        font-size: clamp(2.5rem, 5vw, 3.5rem); /* Tamaño responsivo */
+        font-weight: 900;
+        color: #0c1d46;
+        margin: 0 0 10px 0;
+        line-height: 1.1;
+    }
+
+    .stat-label {
+        font-size: clamp(1.2rem, 3vw, 1.8rem); /* Tamaño responsivo */
+        color: #555;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    /* Para tablets */
+    @media (max-width: 1024px) {
+        .stats-container {
+            padding: 35px 15px;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            padding: 12px;
+        }
+    }
+
+    /* Para pantallas medianas */
+    @media (max-width: 768px) {
+        .stats-container {
+            flex-direction: column;
+            padding: 40px 20px;
+            gap: 25px; /* Espacio entre elementos */
+        }
+
+        .stat-item {
+            margin-bottom: 0; /* Remove margin, usa gap en su lugar */
+            padding: 20px;
+            width: 100%;
+            max-width: none;
+        }
+
+        .stat-number {
+            font-size: clamp(3rem, 8vw, 4rem);
+        }
+
+        .stat-label {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+        }
+    }
+
+    /* Para móviles pequeños */
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+
+        .stats-container {
+            border-radius: 8px;
+            padding: 30px 15px;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .stat-item {
+            padding: 15px;
+        }
+
+        .stat-number {
+            font-size: clamp(2.8rem, 10vw, 3.5rem);
+        }
+
+        .stat-label {
+            font-size: clamp(1.3rem, 5vw, 1.6rem);
+        }
+    }
+
+    /* Para pantallas muy grandes */
+    @media (min-width: 1200px) {
+        .stats-container {
+            padding: 50px 40px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            padding: 25px;
+        }
+    }
+</style>

@@ -1,0 +1,50 @@
+<div class="hero-banner">
+    <div class="hero-content">
+        <h2 class="hero-title">Conectando sus sueños,</h2>
+        <h2 class="hero-title">impulsando su futuro</h2>
+    </div>
+</div>
+
+<style>
+    .hero-banner {
+        position: relative;
+        /* La URL de la imagen de fondo */
+        background-image: url("../assets/dreams.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 350px; /* Ajusta la altura si lo necesitas */
+        border-radius: 40px;
+        margin: 20px auto;
+        max-width: 90%;
+        /* Superposición de degradado de color */
+        background-image: linear-gradient(to right, #0c1d46, #ff6a00),
+            url("../assets/dreams.png");
+        background-blend-mode: multiply; /* Mezcla el degradado con la imagen */
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white; /* Color del texto */
+    }
+
+    .hero-title {
+        font-size: 50px; /* Tamaño del texto */
+        font-weight: bold;
+        margin: 0;
+    }
+
+    /* Media queries para adaptar el tamaño en dispositivos más pequeños */
+    @media (max-width: 768px) {
+        .hero-banner {
+            height: 200px;
+        }
+        .hero-title {
+            font-size: 1.5rem;
+        }
+    }
+</style>
